@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin/add_district', [App\Http\Controllers\HomeController::class, 'add_district'])->name('add_district');
+    Route::post('/admin/add/district', [App\Http\Controllers\HomeController::class, 'store_district'])->name('admin.add.district');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
