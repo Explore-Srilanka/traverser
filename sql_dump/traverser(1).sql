@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2021 at 06:32 AM
+-- Generation Time: Feb 23, 2021 at 06:08 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.25
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `traverser`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'boom', '2021-02-22 23:17:35', '2021-02-22 23:17:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -130,11 +151,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'john doe', 'johndoe@gmail.com', NULL, '$2y$10$jjnj40o5Hjx/D0gomY3Bke3.U8S1FIG/AjyxSunU7rLGprI8ZBki2', NULL, '2021-01-12 23:55:39', '2021-01-12 23:55:39');
+(1, 'john doe', 'johndoe@gmail.com', NULL, '$2y$10$jjnj40o5Hjx/D0gomY3Bke3.U8S1FIG/AjyxSunU7rLGprI8ZBki2', 'Fb5ij1sa8xQkkHdtkxqxl6rUDFoNogntPHIo11FLiHYYIa07VcN5QAhskFYv', '2021-01-12 23:55:39', '2021-01-12 23:55:39');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -177,6 +204,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
